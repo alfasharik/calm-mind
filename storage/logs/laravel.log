@@ -1,0 +1,57 @@
+[2020-03-11 07:22:09] local.ERROR: Declaration of Symfony\Component\Translation\TranslatorInterface::setLocale($locale) must be compatible with Symfony\Contracts\Translation\LocaleAwareInterface::setLocale(string $locale) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Declaration of Symfony\\Component\\Translation\\TranslatorInterface::setLocale($locale) must be compatible with Symfony\\Contracts\\Translation\\LocaleAwareInterface::setLocale(string $locale) at C:\\OSPanel\\domains\\calm-mind\\vendor\\symfony\\translation\\TranslatorInterface.php:24)
+[stacktrace]
+#0 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(148): Symfony\\Component\\Debug\\Exception\\FatalErrorException->__construct()
+#1 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(134): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalExceptionFromError()
+#2 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 C:\\OSPanel\\domains\\calm-mind\\vendor\\composer\\ClassLoader.php(444): ()
+#4 C:\\OSPanel\\domains\\calm-mind\\vendor\\composer\\ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#5 C:\\OSPanel\\domains\\calm-mind\\vendor\
+esbot\\carbon\\src\\Carbon\\Traits\\Localization.php(24): Composer\\Autoload\\ClassLoader->loadClass()
+#6 C:\\OSPanel\\domains\\calm-mind\\vendor\
+esbot\\carbon\\src\\Carbon\\Traits\\Localization.php(24): spl_autoload_call()
+#7 C:\\OSPanel\\domains\\calm-mind\\vendor\
+esbot\\carbon\\src\\Carbon\\Traits\\Localization.php(24): interface_exists()
+#8 C:\\OSPanel\\domains\\calm-mind\\vendor\\composer\\ClassLoader.php(444): ()
+#9 C:\\OSPanel\\domains\\calm-mind\\vendor\\composer\\ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#10 C:\\OSPanel\\domains\\calm-mind\\vendor\
+esbot\\carbon\\src\\Carbon\\Traits\\Options.php(27): Composer\\Autoload\\ClassLoader->loadClass()
+#11 C:\\OSPanel\\domains\\calm-mind\\vendor\
+esbot\\carbon\\src\\Carbon\\Traits\\Options.php(27): spl_autoload_call()
+#12 C:\\OSPanel\\domains\\calm-mind\\vendor\\composer\\ClassLoader.php(444): ()
+#13 C:\\OSPanel\\domains\\calm-mind\\vendor\\composer\\ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#14 C:\\OSPanel\\domains\\calm-mind\\vendor\
+esbot\\carbon\\src\\Carbon\\Traits\\Date.php(529): Composer\\Autoload\\ClassLoader->loadClass()
+#15 C:\\OSPanel\\domains\\calm-mind\\vendor\
+esbot\\carbon\\src\\Carbon\\Traits\\Date.php(529): spl_autoload_call()
+#16 C:\\OSPanel\\domains\\calm-mind\\vendor\\composer\\ClassLoader.php(444): ()
+#17 C:\\OSPanel\\domains\\calm-mind\\vendor\\composer\\ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#18 C:\\OSPanel\\domains\\calm-mind\\vendor\
+esbot\\carbon\\src\\Carbon\\Carbon.php(511): Composer\\Autoload\\ClassLoader->loadClass()
+#19 C:\\OSPanel\\domains\\calm-mind\\vendor\
+esbot\\carbon\\src\\Carbon\\Carbon.php(511): spl_autoload_call()
+#20 C:\\OSPanel\\domains\\calm-mind\\vendor\\composer\\ClassLoader.php(444): ()
+#21 C:\\OSPanel\\domains\\calm-mind\\vendor\\composer\\ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#22 C:\\OSPanel\\domains\\calm-mind\\vendor\
+esbot\\carbon\\src\\Carbon\\Laravel\\ServiceProvider.php(40): Composer\\Autoload\\ClassLoader->loadClass()
+#23 C:\\OSPanel\\domains\\calm-mind\\vendor\
+esbot\\carbon\\src\\Carbon\\Laravel\\ServiceProvider.php(40): spl_autoload_call()
+#24 C:\\OSPanel\\domains\\calm-mind\\vendor\
+esbot\\carbon\\src\\Carbon\\Laravel\\ServiceProvider.php(20): Carbon\\Laravel\\ServiceProvider->updateLocale()
+#25 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): Carbon\\Laravel\\ServiceProvider->boot()
+#26 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array:{C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php:32}()
+#27 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure:C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php:30-34}()
+#28 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\Util::unwrapIfClosure()
+#29 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#30 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call()
+#31 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(856): Illuminate\\Foundation\\Application->call()
+#32 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(839): Illuminate\\Foundation\\Application->bootProvider()
+#33 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(840): Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure:C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:838-840}()
+#34 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(840): array_walk()
+#35 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#36 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
+#37 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith()
+#38 C:\\OSPanel\\domains\\calm-mind\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): App\\Console\\Kernel->bootstrap()
+#39 C:\\OSPanel\\domains\\calm-mind\\artisan(37): App\\Console\\Kernel->handle()
+#40 C:\\OSPanel\\domains\\calm-mind\\artisan(0): {main}()
+#41 {main}
+"} 
