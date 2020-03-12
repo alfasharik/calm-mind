@@ -1,2 +1,44 @@
-.container {
+@font-face {
+    font-family: another_castle;
+    src: url(../fonts/another_castle.ttf);
 }
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.top_panel {
+    width: 100%;
+    height: 50px;
+    background-color: #15e568;
+}
+
+.top_panel h1, .top_panel p {
+    display: inline-block;
+}
+
+.top_panel h1 {
+    padding: 10px 540px;
+    font-family: "another_castle", monospace;
+}
+
+.top_panel img {
+    float: right;
+    padding: 10px 25px;
+    height: 30px;
+    width: 30px;
+}
+
+.top_panel p {
+    font-family: "Helvetica Narrow", monospace;
+    font-weight: 600;
+    width: 130px;
+    line-height: 1.7;
+}
+
+
+
+
+
+
