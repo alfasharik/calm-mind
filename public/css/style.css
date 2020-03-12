@@ -1,11 +1,20 @@
 @font-face {
-    font-family: another_castle;
+    font-family: Another Castle;
     src: url(../fonts/another_castle.ttf);
+}
+
+@font-face {
+    font-family: San Francisco;
+    src: url(../fonts/SF.ttf);
 }
 
 * {
     padding: 0;
     margin: 0;
+}
+
+body {
+    background-color: #d8f5d5;
 }
 
 .top_panel {
@@ -19,13 +28,13 @@
 }
 
 .top_panel h1 {
-    padding: 10px 440px 10px 640px;
-    font-family: "another_castle", monospace;
+    padding: 10px 390px 10px 640px;
+    font-family: "Another Castle", monospace;
 }
 
 .top_panel img {
     float: right;
-    padding: 10px 25px;
+    padding: 10px 60px 10px 10px;
     height: 30px;
     width: 30px;
 }
@@ -37,11 +46,11 @@
     line-height: 1.7;
 }
 
-.top_menu {
+.top_menu, .footer {
+    margin: 0 460px;
     width: 1000px;
     height: 40px;
     background-color: darkslategray;
-    margin: 0 460px;
 }
 
 .top_menu_element {
@@ -61,6 +70,50 @@
 .top_menu_element a:hover {
     color: #ffffff;
 }
+
+.content {
+    width: 800px;
+    background-color: #4c4f4c;
+    opacity: 0.6;
+    margin: 70px 560px 0 560px;
+}
+
+.content h1 {
+    font-family: "Helvetica Narrow", monospace;
+    text-align: center;
+    color: #15e568;
+    padding-top: 20px;
+}
+
+.content p {
+    margin: 20px 10px;
+    text-align: justify;
+    color: #ffffff;
+    font-family: "San Francisco", monospace;
+}
+
+.wrapper {
+    min-height: calc(79vh - 40px);
+}
+
+.footer {
+    margin-top: 50px;
+}
+
+.socials, .copyright {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    color: #9ef1f7;
+    font-family: "Helvetica Narrow", monospace;
+    font-weight: 600;
+}
+
+.copyright {
+    float: right;
+}
+
+
 
 
 
