@@ -1,5 +1,5 @@
 @extends('app')
 
-@section('title')
-    feed
-@endsection
+{{--@section('title')--}}
+{{--    feed--}}
+{{--@endsection--}}
