@@ -19,7 +19,7 @@
 }
 
 .top_panel h1 {
-    padding: 10px 540px;
+    padding: 10px 440px 10px 640px;
     font-family: "another_castle", monospace;
 }
 
@@ -37,6 +37,30 @@
     line-height: 1.7;
 }
 
+.top_menu {
+    width: 1000px;
+    height: 40px;
+    background-color: darkslategray;
+    margin: 0 460px;
+}
+
+.top_menu_element {
+    display: inline-block;
+    width: 185px;
+    height: 40px;
+    margin: 0 5px;
+    text-align: center;
+    padding: 10px 0;
+    font-family: "Roboto Mono", monospace;
+}
+.top_menu_element a {
+    color: #9ef1f7;
+    text-decoration: none;
+}
+
+.top_menu_element a:hover {
+    color: #ffffff;
+}
 
 
 

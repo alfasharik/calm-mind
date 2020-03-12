@@ -16,23 +16,24 @@
             <img src="{{asset('icons/LK.png')}}" alt="Enter your account">
         </div>
     @show
-    <br>
+
+
     @section('top_menu')
         <div class="top_menu">
             <div class="top_menu_element">
-                Письмо
+                <a href="#">Письмо</a>
             </div>
             <div class="top_menu_element">
-                Мысль
+                <a href="#">Мысль</a>
             </div>
             <div class="top_menu_element">
-                Лента
+                <a href="#">Лента</a>
             </div>
             <div class="top_menu_element">
-                Блог
+                <a href="#">Блог</a>
             </div>
             <div class="top_menu_element">
-                Об авторе
+                <a href="#">Об авторе</a>
             </div>
         </div>
     @show
