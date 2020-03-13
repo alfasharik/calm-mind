@@ -13,3 +13,7 @@
         <button class="button_for_letters" data-title="for_another">Письмо другому</button>
     </div>
 @endsection
+
+@section('javascript')
+    <script src="{{asset('js/letter.js')}}"></script>
+@endsection

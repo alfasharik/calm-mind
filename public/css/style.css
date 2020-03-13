@@ -138,6 +138,33 @@ body {
     outline-color: #9ef1f7;
 }
 
+.letter_form {
+
+}
+
+.letter_form_title,
+.letter_form_text,
+.letter_form_submit {
+    display: block;
+    margin-top: 20px;
+    background-color: darkslategray;
+
+}
+
+.letter_form_title,
+.letter_form_submit {
+    width: 300px;
+    height: 40px;
+    margin-left: 250px;
+}
+
+.letter_form_text {
+    width: 600px;
+    height: 600px;
+    margin-left: 100px;
+    resize: none;
+}
+
 .wrapper {
     min-height: calc(100vh - 230px);
 }

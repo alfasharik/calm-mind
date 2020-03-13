@@ -19,6 +19,6 @@
 
     @include('base.footer')
 
-    <script src="{{asset('js/script.js')}}"></script>
+    @yield('javascript')
 </body>
 </html>
