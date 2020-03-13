@@ -1,7 +1,7 @@
 @section('top_menu')
     <div class="top_menu">
         <div class="top_menu_element">
-            <a class="top_menu_element_link" href="#">Письмо</a>
+            <a class="top_menu_element_link" href="/letter">Письмо</a>
         </div>
         <div class="top_menu_element">
             <a class="top_menu_element_link" href="#">Мысль</a>

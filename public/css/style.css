@@ -28,6 +28,7 @@ body {
 }
 
 .top_panel_title {
+    color: #000000;
     padding: 10px 390px 10px 640px;
     font-family: "Another Castle", monospace;
 }
@@ -86,12 +87,19 @@ body {
     color: #000000;
 }
 
-.content {
+.wrapper_for_home {
     display: none;
-    width: 800px;
+}
+
+.wrapper_for_letter {
+    display: inline-block;
+}
+
+.content {
+    display: inline-block;
+    width: 790px;
     background-color: #15e568;
-    opacity: 0.6;
-    margin: 0 560px;
+    margin: 20px 560px;
     border: 3px solid #000000;
 }
 
@@ -108,6 +116,26 @@ body {
     margin: 20px 10px;
     text-align: justify;
     font-family: "San Francisco", monospace;
+}
+
+.button_for_letters {
+    display: inline-block;
+    width: 200px;
+    height: 30px;
+    border: none;
+    margin: 95px;
+    background-color: darkslategray;
+    color: #9ef1f7;
+    font-family: "San Francisco", monospace;
+}
+
+.button_for_letters:hover {
+    color: #ffffff;
+}
+
+.button_for_letters:focus,
+.button_for_letters:active {
+    outline-color: #9ef1f7;
 }
 
 .wrapper {

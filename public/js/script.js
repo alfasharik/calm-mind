@@ -4,19 +4,21 @@ let timerId;
 actionButton.addEventListener('click', actionButtonHandler);
 
 function actionButtonHandler() {
-    let content = document.querySelector('.content');
-    content.style.opacity = '0';
-    content.style.display = 'block';
+    actionButton.parentNode.removeChild(actionButton);
 
-    actionButton.style.opacity = '0';
-    actionButton.style.pointerEvents = 'none';
+    let content = document.querySelector('.wrapper_for_home');
+    content.style.opacity = '0';
+    content.style.display = 'inline-block';
+
+    // actionButton.style.opacity = '0';
+    // actionButton.style.pointerEvents = 'none';
     timerId = setInterval(showContent, 100, content);
 }
 
 function showContent(content) {
     content.style.opacity = +content.style.opacity + 0.1;
 
-    if (content.style.opacity === '0.7') {
+    if (content.style.opacity === '1.0') {
         clearInterval(timerId);
     }
 }
