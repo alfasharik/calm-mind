@@ -8,7 +8,8 @@ function actionButtonHandler() {
     content.style.opacity = '0';
     content.style.display = 'block';
 
-    actionButton.style.display = 'none';
+    actionButton.style.opacity = '0';
+    actionButton.style.pointerEvents = 'none';
     timerId = setInterval(showContent, 100, content);
 }
 

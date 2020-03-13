@@ -23,23 +23,23 @@ body {
     background-color: #15e568;
 }
 
-.top_panel h1, .top_panel p {
+.top_panel_title, .top_panel_text {
     display: inline-block;
 }
 
-.top_panel h1 {
+.top_panel_title {
     padding: 10px 390px 10px 640px;
     font-family: "Another Castle", monospace;
 }
 
-.top_panel img {
+.top_panel_img {
     float: right;
     padding: 10px 60px 10px 10px;
     height: 30px;
     width: 30px;
 }
 
-.top_panel p {
+.top_panel_text {
     font-family: "Helvetica Narrow", monospace;
     font-weight: 600;
     width: 130px;
@@ -62,12 +62,12 @@ body {
     padding: 10px 0;
     font-family: "Roboto Mono", monospace;
 }
-.top_menu_element a {
+.top_menu_element_link {
     color: #9ef1f7;
     text-decoration: none;
 }
 
-.top_menu_element a:hover {
+.top_menu_element_link:hover {
     color: #ffffff;
 }
 
@@ -76,44 +76,46 @@ body {
     background-color: #15e568;
     width: 300px;
     height: 30px;
-    margin: 20px 810px;
+    margin: 20px 800px;
     text-align: center;
     padding: 10px 0;
     font-family: "Helvetica Narrow", monospace;
     font-weight: 900;
-    border: 3px solid darkslategray;
+    border: 3px solid #000000;
     font-size: 20px;
-    color: darkslategray;
+    color: #000000;
 }
 
 .content {
     display: none;
     width: 800px;
-    background-color: #4c4f4c;
+    background-color: #15e568;
     opacity: 0.6;
-    margin: 70px 560px 0 560px;
+    margin: 0 560px;
+    border: 3px solid #000000;
 }
 
-/*.content h1 {*/
-/*    font-family: "Helvetica Narrow", monospace;*/
-/*    text-align: center;*/
-/*    color: #15e568;*/
-/*    padding-top: 20px;*/
-/*}*/
+.content_element {
+    margin: 10px;
+}
 
-.content p {
+.content_element_title {
+    text-align: center;
+    font-family: "Helvetica Narrow", monospace;
+}
+
+.content_element_text {
     margin: 20px 10px;
     text-align: justify;
-    color: #ffffff;
     font-family: "San Francisco", monospace;
 }
 
 .wrapper {
-    min-height: calc(79vh - 40px);
+    min-height: calc(100vh - 230px);
 }
 
 .footer {
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .socials, .copyright {
