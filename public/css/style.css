@@ -14,9 +14,12 @@
 }
 
 body {
-    background-color: #d8f5d5;
+    background-color: #b5c7bb;
 }
 
+a {
+    text-decoration: none;
+}
 .top_panel {
     width: 100%;
     height: 50px;
@@ -35,7 +38,7 @@ body {
 
 .top_panel_img {
     float: right;
-    padding: 10px 60px 10px 10px;
+    padding: 10px 50px 10px 10px;
     height: 30px;
     width: 30px;
 }
@@ -43,7 +46,7 @@ body {
 .top_panel_text {
     font-family: "Helvetica Narrow", monospace;
     font-weight: 600;
-    width: 130px;
+    width: 170px;
     line-height: 1.7;
 }
 
@@ -98,7 +101,7 @@ body {
 .content {
     display: inline-block;
     width: 790px;
-    background-color: #15e568;
+    background-color: #909e95;
     margin: 20px 560px;
     border: 3px solid #000000;
 }
@@ -135,7 +138,7 @@ body {
 
 .button_for_letters:focus,
 .button_for_letters:active {
-    outline-color: #9ef1f7;
+    outline-color: #ffffff;
 }
 
 .letter_form {
@@ -147,31 +150,48 @@ body {
 .letter_form_submit {
     display: block;
     margin-top: 20px;
-    background-color: darkslategray;
-
 }
 
 .letter_form_title,
-.letter_form_submit {
-    width: 300px;
-    height: 40px;
-    margin-left: 250px;
+.letter_form_text {
+    width: 600px;
+    background-color: #b5c7bb;
+    border: 1px solid #000000;
 }
 
 .letter_form_text {
-    width: 600px;
-    height: 600px;
+    height: 450px;
     margin-left: 100px;
     resize: none;
 }
 
-.wrapper {
-    min-height: calc(100vh - 230px);
+.letter_form_submit {
+    width: 300px;
+    background-color: darkslategray;
+    border: none;
+    color: #9ef1f7;
+    margin-bottom: 20px;
+    margin-left: 400px;
+    height: 40px;
+    text-align: center;
+    padding-top: 20px;
 }
 
-.footer {
-    margin-top: 100px;
+.letter_form_title {
+    margin-left: 100px;
+    height: 30px;
 }
+
+.letter_form_elem_desc {
+    margin: 20px 0 0 100px;
+    font-family: "San Francisco", monospace;
+}
+
+.wrapper {
+    min-height: calc(100vh - 130px);
+}
+
+
 
 .socials, .copyright {
     display: inline-block;

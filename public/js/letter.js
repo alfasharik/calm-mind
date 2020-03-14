@@ -25,18 +25,25 @@ function removeButtons()
 function createForm()
 {
     let form = document.createElement('form');
-    form.method = 'post';
     form.classList.add('letter_form');
 
+    appendFormChildren(form);
+
+    return form;
+}
+
+function appendFormChildren(form) {
+    let titleDesc = createTitleDesc();
     let title = createFormTitle();
+    let textDesc = createTextDesc();
     let text = createFormText();
     let submit = createFormSubmit();
 
+    form.appendChild(titleDesc);
     form.appendChild(title);
+    form.appendChild(textDesc);
     form.appendChild(text);
     form.appendChild(submit);
-
-    return form;
 }
 
 function createFormTitle()
@@ -58,13 +65,43 @@ function createFormText()
     return text;
 }
 
+function createButton()
+{
+    let button = document.createElement('div');
+    button.classList.add('letter_form_submit');
+    button.innerHTML = 'Отправить!';
+
+    return button;
+}
+
 function createFormSubmit()
 {
-    let submit = document.createElement('input');
-    submit.type = 'submit';
-    submit.classList.add('letter_form_submit');
+    let anchor = document.createElement('a');
+    anchor.href = '#';
 
-    return submit;
+    let button = createButton();
+
+    anchor.appendChild(button);
+
+    return anchor;
+}
+
+function createTitleDesc()
+{
+    let titleDesc = document.createElement('p');
+    titleDesc.classList.add('letter_form_elem_desc');
+    titleDesc.innerHTML = 'Кому пишем?';
+
+    return titleDesc;
+}
+
+function createTextDesc()
+{
+    let textDesc = document.createElement('p');
+    textDesc.classList.add('letter_form_elem_desc');
+    textDesc.innerHTML = 'Опиши свои чувства!';
+
+    return textDesc;
 }
 
 function changeContentTitle()
