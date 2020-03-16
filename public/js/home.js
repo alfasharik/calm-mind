@@ -5,8 +5,6 @@ actionButton.addEventListener('click', actionButtonHandler);
 
 function actionButtonHandler()
 {
-    actionButton.parentNode.removeChild(actionButton);
-
     let content = document.querySelector('.wrapper_for_home');
     content.style.opacity = '0';
     content.style.display = 'inline-block';
@@ -18,7 +16,7 @@ function showContent(content)
 {
     content.style.opacity = +content.style.opacity + 0.1;
 
-    if (content.style.opacity === '1.0') {
+    if (content.style.opacity === '1') {
         clearInterval(timerId);
     }
 }

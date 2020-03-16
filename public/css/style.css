@@ -14,7 +14,7 @@
 }
 
 body {
-    background-color: #b5c7bb;
+    background-image: url("/pics/bg_pic.jpg");
 }
 
 .main_header {
@@ -38,7 +38,7 @@ body {
 }
 
 .top_panel_title {
-    padding: 0 500px 0 715px;
+    padding: 0 450px 0 715px;
     font-family: "Another Castle", monospace;
 }
 
@@ -49,7 +49,7 @@ body {
 
 .top_panel_img {
     float: right;
-    padding-right: 70px;
+    padding-right: 60px;
     height: 30px;
     width: 30px;
 }
@@ -57,7 +57,7 @@ body {
 .top_panel_text {
     font-family: "Helvetica Narrow", monospace;
     font-weight: 600;
-    width: 130px;
+    width: 170px;
     line-height: 1.7;
 }
 
@@ -89,9 +89,9 @@ body {
 .action_button {
     display: inline-block;
     background-color: #15e568;
-    width: 300px;
+    width: 790px;
     height: 30px;
-    margin: 20px 800px;
+    margin: 0 550px;
     text-align: center;
     padding: 10px 0;
     font-family: "Helvetica Narrow", monospace;
@@ -113,8 +113,8 @@ body {
     display: inline-block;
     width: 790px;
     background-color: #909e95;
-    margin: 20px 560px;
-    border: 3px solid #000000;
+    margin: 0 550px;
+    border: 3px solid transparent;
 }
 
 .content_element {
@@ -153,7 +153,11 @@ body {
 }
 
 .letter_form {
+    display: block;
+}
 
+.letter_form_hidden {
+    display: none;
 }
 
 .letter_form_title,
@@ -185,7 +189,6 @@ body {
     margin-left: 400px;
     height: 40px;
     text-align: center;
-    padding-top: 20px;
 }
 
 .letter_form_title {
@@ -199,7 +202,9 @@ body {
 }
 
 .container {
-    min-height: calc(100vh - 130px);
+    opacity: 0.9;
+    margin-top: 20px;
+    min-height: calc(100vh - 150px);
 }
 
 .footer_nav,

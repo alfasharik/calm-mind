@@ -6,14 +6,24 @@ buttonLetterForAnother.addEventListener('click', buttonsForLettersHandler);
 
 let content = document.querySelector('.content');
 
-
-function buttonsForLettersHandler()
+function buttonsForLettersHandler(event)
 {
-    changeContentTitle();
+    let text = 'Уверен тебе есть что написать близкому, просто начни!';
+
+    if (event.target.dataset.title === 'for_you') {
+        let titleDesc = document.querySelector('.letter_form_elem_desc');
+        let title = document.querySelector('.letter_form_title');
+
+        titleDesc.parentNode.removeChild(titleDesc);
+        title.parentNode.removeChild(title);
+
+        text = 'Пора писать письмо себе!(не забывай любить себя)';
+    }
+
+    changeActionButtonText(text);
     removeButtons();
 
-    let form = createForm();
-    content.appendChild(form);
+    showForm();
 }
 
 function removeButtons()
@@ -22,90 +32,16 @@ function removeButtons()
     buttonLetterForAnother.parentNode.removeChild(buttonLetterForAnother);
 }
 
-function createForm()
+function showForm()
 {
-    let form = document.createElement('form');
+    let form = document.querySelector('.letter_form_hidden');
+
+    form.classList.remove('letter_form_hidden');
     form.classList.add('letter_form');
-
-    appendFormChildren(form);
-
-    return form;
 }
 
-function appendFormChildren(form) {
-    let titleDesc = createTitleDesc();
-    let title = createFormTitle();
-    let textDesc = createTextDesc();
-    let text = createFormText();
-    let submit = createFormSubmit();
-
-    form.appendChild(titleDesc);
-    form.appendChild(title);
-    form.appendChild(textDesc);
-    form.appendChild(text);
-    form.appendChild(submit);
-}
-
-function createFormTitle()
+function changeActionButtonText(text)
 {
-    let title = document.createElement('input');
-    title.type = 'text';
-    title.name = 'title';
-    title.classList.add('letter_form_title');
-
-    return title;
-}
-
-function createFormText()
-{
-    let text = document.createElement('textarea');
-    text.name = 'text';
-    text.classList.add('letter_form_text');
-
-    return text;
-}
-
-function createButton()
-{
-    let button = document.createElement('div');
-    button.classList.add('letter_form_submit');
-    button.innerHTML = 'Отправить!';
-
-    return button;
-}
-
-function createFormSubmit()
-{
-    let anchor = document.createElement('a');
-    anchor.href = '#';
-
-    let button = createButton();
-
-    anchor.appendChild(button);
-
-    return anchor;
-}
-
-function createTitleDesc()
-{
-    let titleDesc = document.createElement('p');
-    titleDesc.classList.add('letter_form_elem_desc');
-    titleDesc.innerHTML = 'Кому пишем?';
-
-    return titleDesc;
-}
-
-function createTextDesc()
-{
-    let textDesc = document.createElement('p');
-    textDesc.classList.add('letter_form_elem_desc');
-    textDesc.innerHTML = 'Опиши свои чувства!';
-
-    return textDesc;
-}
-
-function changeContentTitle()
-{
-    let contentTitle = document.querySelector('.content_element_title');
-    contentTitle.innerHTML = 'Пора писать письмо себе!(не забывай любить себя)';
+    let actionButton = document.querySelector('.action_button');
+    actionButton.innerHTML = text;
 }
