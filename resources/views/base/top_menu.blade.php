@@ -1,19 +1,21 @@
 @section('top_menu')
-    <div class="top_menu">
-        <div class="top_menu_element">
-            <a class="top_menu_element_link" href="/letter">Письмо</a>
-        </div>
-        <div class="top_menu_element">
-            <a class="top_menu_element_link" href="#">Мысль</a>
-        </div>
-        <div class="top_menu_element">
-            <a class="top_menu_element_link" href="#">Лента</a>
-        </div>
-        <div class="top_menu_element">
-            <a class="top_menu_element_link" href="#">Блог</a>
-        </div>
-        <div class="top_menu_element">
-            <a class="top_menu_element_link" href="#">Об авторе</a>
-        </div>
-    </div>
+    <nav class="main_nav">
+        <ul class="top_menu">
+            <li class="top_menu_element">
+                <a href="/letter" class="top_menu_element_link">Письмо</a>
+            </li>
+            <li class="top_menu_element">
+                <a href="#" class="top_menu_element_link">Мысль</a>
+            </li>
+            <li class="top_menu_element">
+                <a href="#" class="top_menu_element_link">Лента</a>
+            </li>
+            <li class="top_menu_element">
+                <a href="#" class="top_menu_element_link">Блог</a>
+            </li>
+            <li class="top_menu_element">
+                <a href="#" class="top_menu_element_link">Об авторе</a>
+            </li>
+        </ul>
+    </nav>
 @show

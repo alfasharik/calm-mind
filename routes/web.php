@@ -18,13 +18,13 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-   return view('home');
+   return view('pages.home');
 });
 
 Route::get('/feed', function () {
-    return view('feed');
+    return view('pages.feed');
 });
 
 Route::get('/letter', function () {
-    return view('letter');
+    return view('pages.letter');
 });

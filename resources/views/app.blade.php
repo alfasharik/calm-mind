@@ -9,13 +9,14 @@
     <link href="{{asset('css/style.css')}}" type="text/css" rel="stylesheet">
 </head>
 <body>
-    @include('base.top_panel')
+    <header class="main_header">
+        @include('base.top_panel')
+        @include('base.top_menu')
+    </header>
 
-    @include('base.top_menu')
-
-    <div class="wrapper">
+    <main class="container">
         @yield('content')
-    </div>
+    </main>
 
     @include('base.footer')
 

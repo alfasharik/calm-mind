@@ -17,28 +17,39 @@ body {
     background-color: #b5c7bb;
 }
 
-a {
-    text-decoration: none;
+.main_header {
+    width: 100%;
+    height: 90px;
 }
+
 .top_panel {
     width: 100%;
     height: 50px;
     background-color: #15e568;
 }
 
-.top_panel_title, .top_panel_text {
+.top_panel_wrapper {
+    padding-top: 10px;
+}
+
+.top_panel_title,
+.top_panel_text {
     display: inline-block;
 }
 
 .top_panel_title {
-    color: #000000;
-    padding: 10px 390px 10px 640px;
+    padding: 0 500px 0 715px;
     font-family: "Another Castle", monospace;
+}
+
+.top_panel_title a {
+    text-decoration: none;
+    color: #000000;
 }
 
 .top_panel_img {
     float: right;
-    padding: 10px 50px 10px 10px;
+    padding-right: 70px;
     height: 30px;
     width: 30px;
 }
@@ -46,11 +57,11 @@ a {
 .top_panel_text {
     font-family: "Helvetica Narrow", monospace;
     font-weight: 600;
-    width: 170px;
+    width: 130px;
     line-height: 1.7;
 }
 
-.top_menu, .footer {
+.top_menu, .main_footer {
     margin: 0 460px;
     width: 1000px;
     height: 40px;
@@ -187,14 +198,17 @@ a {
     font-family: "San Francisco", monospace;
 }
 
-.wrapper {
+.container {
     min-height: calc(100vh - 130px);
 }
 
-
-
-.socials, .copyright {
+.footer_nav,
+.footer_nav_elem {
     display: inline-block;
+}
+
+.footer_nav_elem,
+.footer_copyright {
     padding: 10px 20px;
     text-align: center;
     color: #9ef1f7;
@@ -202,7 +216,7 @@ a {
     font-weight: 600;
 }
 
-.copyright {
+.footer_copyright {
     float: right;
 }
 
