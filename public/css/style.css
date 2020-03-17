@@ -87,6 +87,7 @@ body {
 }
 
 .action_button {
+    cursor: pointer;
     display: inline-block;
     background-color: #15e568;
     width: 790px;
@@ -113,8 +114,7 @@ body {
     display: inline-block;
     width: 790px;
     background-color: #909e95;
-    margin: 0 550px;
-    border: 3px solid transparent;
+    margin: 0 552px;
 }
 
 .content_element {
@@ -133,6 +133,7 @@ body {
 }
 
 .button_for_letters {
+    cursor: pointer;
     display: inline-block;
     width: 200px;
     height: 30px;
@@ -150,6 +151,10 @@ body {
 .button_for_letters:focus,
 .button_for_letters:active {
     outline-color: #ffffff;
+}
+
+.button_for_letters_hidden {
+    display: none;
 }
 
 .letter_form {
@@ -189,6 +194,11 @@ body {
     margin-left: 400px;
     height: 40px;
     text-align: center;
+    cursor: pointer;
+}
+
+.letter_form_submit:hover {
+    color: #ffffff;
 }
 
 .letter_form_title {

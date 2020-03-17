@@ -1,10 +1,8 @@
-let buttonLetterForYou = document.querySelector('.button_for_letters[data-title="for_you"]');
-let buttonLetterForAnother = document.querySelector('.button_for_letters[data-title="for_another"]');
+let actionButton = document.querySelector('.action_button');
 
-buttonLetterForYou.addEventListener('click', buttonsForLettersHandler);
-buttonLetterForAnother.addEventListener('click', buttonsForLettersHandler);
+actionButton.addEventListener('click', showButtonsForLetters);
 
-let content = document.querySelector('.content');
+
 
 function buttonsForLettersHandler(event)
 {
@@ -24,10 +22,14 @@ function buttonsForLettersHandler(event)
     removeButtons();
 
     showForm();
+    actionButton.removeEventListener('click', showButtonsForLetters);
 }
 
 function removeButtons()
 {
+    let buttonLetterForYou = document.querySelector('.button_for_letters[data-title="for_you"]');
+    let buttonLetterForAnother = document.querySelector('.button_for_letters[data-title="for_another"]');
+
     buttonLetterForYou.parentNode.removeChild(buttonLetterForYou);
     buttonLetterForAnother.parentNode.removeChild(buttonLetterForAnother);
 }
@@ -38,6 +40,27 @@ function showForm()
 
     form.classList.remove('letter_form_hidden');
     form.classList.add('letter_form');
+}
+
+function showButtonsForLetters()
+{
+    let buttonsForLetters = document.querySelectorAll('.button_for_letters_hidden');
+
+    buttonsForLetters.forEach(function(button) {
+        button.classList.remove('button_for_letters_hidden');
+        button.classList.add('button_for_letters');
+    });
+
+    addListenersAfterShow();
+}
+
+function addListenersAfterShow()
+{
+    let buttonLetterForYou = document.querySelector('.button_for_letters[data-title="for_you"]');
+    let buttonLetterForAnother = document.querySelector('.button_for_letters[data-title="for_another"]');
+
+    buttonLetterForYou.addEventListener('click', buttonsForLettersHandler);
+    buttonLetterForAnother.addEventListener('click', buttonsForLettersHandler);
 }
 
 function changeActionButtonText(text)

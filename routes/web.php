@@ -21,8 +21,8 @@ Route::get('/home', function () {
    return view('pages.home');
 });
 
-Route::get('/feed', function () {
-    return view('pages.feed');
+Route::get('/thought', function () {
+    return view('pages.thought');
 });
 
 Route::get('/letter', function () {

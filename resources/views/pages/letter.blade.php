@@ -9,8 +9,8 @@
         Какой тип письма ты хочешь написать?
     </div>
     <div class="content">
-        <button class="button_for_letters" data-title="for_you">Письмо себе</button>
-        <button class="button_for_letters" data-title="for_another">Письмо другому</button>
+        <button class="button_for_letters_hidden" data-title="for_you">Письмо себе</button>
+        <button class="button_for_letters_hidden" data-title="for_another">Письмо другому</button>
         <form class="letter_form_hidden">
             <p class="letter_form_elem_desc">Кому пишем?</p>
             <input type="text" name="title" class="letter_form_title">
@@ -23,5 +23,5 @@
 @endsection
 
 @section('javascript')
-    <script src="{{asset('js/letter.js')}}"></script>
+    <script src="{{asset('/js/letter.js')}}"></script>
 @endsection

@@ -5,7 +5,7 @@
                 <a href="/letter" class="top_menu_element_link">Письмо</a>
             </li>
             <li class="top_menu_element">
-                <a href="#" class="top_menu_element_link">Мысль</a>
+                <a href="/thought" class="top_menu_element_link">Мысль</a>
             </li>
             <li class="top_menu_element">
                 <a href="#" class="top_menu_element_link">Лента</a>
