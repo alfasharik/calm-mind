@@ -9,5 +9,6 @@ function showForm()
     form.classList.add('letter_form');
 
     actionButton.removeEventListener('click', showForm);
+    actionButton.style.cursor = 'default';
 }
 

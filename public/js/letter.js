@@ -1,8 +1,8 @@
 let actionButton = document.querySelector('.action_button');
+let buttonLetterForYou = document.querySelector('.visually_hidden[data-title="for_you"]');
+let buttonLetterForAnother = document.querySelector('.visually_hidden[data-title="for_another"]');
 
 actionButton.addEventListener('click', showButtonsForLetters);
-
-
 
 function buttonsForLettersHandler(event)
 {
@@ -27,38 +27,34 @@ function buttonsForLettersHandler(event)
 
 function removeButtons()
 {
-    let buttonLetterForYou = document.querySelector('.button_for_letters[data-title="for_you"]');
-    let buttonLetterForAnother = document.querySelector('.button_for_letters[data-title="for_another"]');
-
     buttonLetterForYou.parentNode.removeChild(buttonLetterForYou);
     buttonLetterForAnother.parentNode.removeChild(buttonLetterForAnother);
 }
 
 function showForm()
 {
-    let form = document.querySelector('.letter_form_hidden');
+    let form = document.querySelector('form.visually_hidden');
 
-    form.classList.remove('letter_form_hidden');
+    form.classList.remove('visually_hidden');
     form.classList.add('letter_form');
 }
 
 function showButtonsForLetters()
 {
-    let buttonsForLetters = document.querySelectorAll('.button_for_letters_hidden');
+    let buttonsForLetters = document.querySelectorAll('button.visually_hidden');
+
 
     buttonsForLetters.forEach(function(button) {
-        button.classList.remove('button_for_letters_hidden');
+        button.classList.remove('visually_hidden');
         button.classList.add('button_for_letters');
     });
 
+    actionButton.style.cursor = 'default';
     addListenersAfterShow();
 }
 
 function addListenersAfterShow()
 {
-    let buttonLetterForYou = document.querySelector('.button_for_letters[data-title="for_you"]');
-    let buttonLetterForAnother = document.querySelector('.button_for_letters[data-title="for_another"]');
-
     buttonLetterForYou.addEventListener('click', buttonsForLettersHandler);
     buttonLetterForAnother.addEventListener('click', buttonsForLettersHandler);
 }
@@ -67,4 +63,5 @@ function changeActionButtonText(text)
 {
     let actionButton = document.querySelector('.action_button');
     actionButton.innerHTML = text;
+    console.log(actionButton);
 }

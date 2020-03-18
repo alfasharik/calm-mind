@@ -5,13 +5,13 @@
 @endsection
 
 @section('content')
-    <div class="action_button">
-        Каждому иногда нужно выговориться, выплечи все, что думаешь:
-    </div>
+    <button class="action_button">
+        Каждому иногда нужно выговориться, выплесни все, что думаешь:
+    </button>
     <div class="content">
         <form class="letter_form_hidden">
             <textarea name="text" class="letter_form_text" wfd-id="18"></textarea>
-            <button disabled="true" class="letter_form_submit" wfd-id="16">Отправить!</button>
+            <button class="letter_form_submit" type="button" wfd-id="16">Отправить!</button>
         </form>
     </div>
 @endsection

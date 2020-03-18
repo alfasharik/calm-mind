@@ -5,18 +5,22 @@ actionButton.addEventListener('click', actionButtonHandler);
 
 function actionButtonHandler()
 {
-    let content = document.querySelector('.wrapper_for_home');
-    content.style.opacity = '0';
-    content.style.display = 'inline-block';
+    let wrapper = document.querySelector('.visually_hidden');
 
-    timerId = setInterval(showContent, 100, content);
+    wrapper.classList.remove('visually_hidden');
+    wrapper.style.opacity = '0';
+    wrapper.style.display = 'inline-block';
+
+    timerId = setInterval(showContent, 100, wrapper);
 }
 
-function showContent(content)
+function showContent(wrapper)
 {
-    content.style.opacity = +content.style.opacity + 0.1;
+   wrapper.style.opacity = +wrapper.style.opacity + 0.1;
 
-    if (content.style.opacity === '1') {
+    if (wrapper.style.opacity === '1') {
         clearInterval(timerId);
+        actionButton.removeEventListener('click', actionButtonHandler);
+        actionButton.style.cursor = 'default';
     }
 }

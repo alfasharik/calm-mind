@@ -5,10 +5,10 @@
 @endsection
 
 @section('content')
-    <div class="action_button">
+    <button class="action_button">
         Что это за сайт?
-    </div>
-    <div class="wrapper_for_home">
+    </button>
+    <div class="visually_hidden">
         <div class="content">
             <div class="content_element">
                 <h2 class="content_element_title">Lorem Ipsum</h2>
