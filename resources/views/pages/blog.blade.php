@@ -1,12 +1,12 @@
 @extends('app')
 
 @section('title')
-    Feed
+    Blog
 @endsection
 
 @section('content')
     <button class="action_button button_as_title">
-        Лента открытых записей
+        Записи блога
     </button>
 
     <div class="content">

@@ -30,83 +30,87 @@ body {
     height: 90px;
 }
 
+/*Топ панель*/
+
 .top_panel {
-    width: 100%;
-    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    min-height: 50px;
+    align-items: center;
     background-color: #15e568;
 }
 
-.top_panel_wrapper {
-    padding-top: 10px;
-}
-
-.top_panel_title,
-.top_panel_text {
-    display: inline-block;
-}
-
 .top_panel_title {
-    padding: 0 450px 0 715px;
     font-family: "Another Castle", monospace;
+    margin-right: 510px;
 }
 
-.top_panel_title a {
-    text-decoration: none;
+.top_panel_link {
     color: #000000;
+    text-decoration: none;
 }
 
-.top_panel_title a:hover {
+.top_panel_link:hover {
     color: darkslategray;
 }
 
-.top_panel_img {
-    float: right;
-    padding-right: 60px;
-    height: 30px;
-    width: 30px;
-}
-
-.top_panel_text {
+.top_panel_enter {
     font-family: "Helvetica Narrow", monospace;
     font-weight: 600;
-    width: 170px;
-    line-height: 1.7;
 }
 
-.top_menu, .main_footer {
-    margin: 0 460px;
+.top_panel_enter_img {
+    margin-right: 40px;
+    width: 30px;
+    height: 30px;
+}
+
+/*Топ панель*/
+
+
+/*Топ меню*/
+
+.top_menu {
     width: 1000px;
-    height: 40px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
     background-color: darkslategray;
+    min-height: 40px;
+    align-items: center;
+    list-style-type: none;
 }
 
-.top_menu_element {
-    display: inline-block;
-    width: 185px;
-    height: 40px;
-    margin: 0 5px;
-    text-align: center;
-    padding: 10px 0;
+.top_menu_link {
+    text-decoration: none;
+    color: #9ef1f7;
     font-family: "Roboto Mono", monospace;
 }
-.top_menu_element_link {
-    color: #9ef1f7;
-    text-decoration: none;
-}
 
-.top_menu_element_link:hover {
+.top_menu_link:hover {
     color: #ffffff;
 }
 
+/*Топ меню*/
+
+/* Контент */
+
+.container {
+    opacity: 0.9;
+    margin-top: 20px;
+    min-height: calc(100vh - 150px);
+}
+    /* Главная кнопка */
+
 .action_button {
     cursor: pointer;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     background-color: darkslategray;
-    width: 790px;
-    height: 50px;
-    margin: 0 550px;
-    text-align: center;
-    padding: 10px 0;
+    width: 800px;
+    min-height: 50px;
+    margin: 0 auto;
+    align-items: center;
     font-family: "Helvetica Narrow", monospace;
     font-weight: 900;
     border: 3px solid #9ef1f7;
@@ -119,44 +123,59 @@ body {
     border-color: #ffffff;
 }
 
-.wrapper_for_home {
-    display: none;
+.action_button:focus,
+.action_button:active {
+    outline-color: #ffffff;
 }
 
-.wrapper_for_letter {
-    display: inline-block;
+.button_as_title {
+    cursor: default;
 }
+
+    /* Главная кнопка */
 
 .content {
-    display: inline-block;
-    width: 790px;
+    display: flex;
+    width: 800px;
     background-color: darkslategray;
-    margin: 0 550px;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .content_element {
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
 }
 
 .content_element_title {
-    text-align: center;
+    align-self: center;
     font-family: "Helvetica Narrow", monospace;
     color: #9ef1f7;
 }
 
 .content_element_text {
-    margin: 20px 10px;
+    margin-top: 20px;
     text-align: justify;
     font-family: "San Francisco", monospace;
     color: #ffffff;
 }
 
+
+    /* Письмо */
+
+.buttons_wrapper {
+    display: flex;
+    justify-content: space-around;
+    min-height: 200px;
+    align-items: center;
+}
+
 .button_for_letters {
     cursor: pointer;
-    display: inline-block;
     width: 200px;
-    height: 30px;
-    margin: 95px;
+    min-height: 30px;
     background-color: darkslategray;
     border: 1px solid #9ef1f7;
     color: #9ef1f7;
@@ -173,27 +192,22 @@ body {
     outline-color: #ffffff;
 }
 
-.button_for_letters_hidden {
-    display: none;
-}
+        /* Форма */
 
 .letter_form {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
-.letter_form_hidden {
-    display: none;
-}
-
-.letter_form_title,
-.letter_form_text,
-.letter_form_submit {
-    display: block;
-    margin-top: 20px;
+.letter_form_elem_desc {
+    margin: 10px 0 10px 100px;
+    font-family: "San Francisco", monospace;
+    color: #ffffff;
 }
 
 .letter_form_title,
 .letter_form_text {
+    margin-left: 100px;
     width: 600px;
     background-color: darkslategray;
     color: #ffffff;
@@ -201,13 +215,17 @@ body {
 }
 
 .letter_form_title:focus,
-.letter_form_text:focus {
+.letter_form_text:focus
+{
     outline-color: #ffffff;
 }
 
+.letter_form_title {
+    min-height: 30px;
+}
+
 .letter_form_text {
-    height: 450px;
-    margin-left: 100px;
+    min-height: 450px;
     resize: none;
 }
 
@@ -216,8 +234,7 @@ body {
     background-color: darkslategray;
     border: 1px solid #9ef1f7;
     color: #9ef1f7;
-    margin-bottom: 20px;
-    margin-left: 400px;
+    margin: 20px 0 20px 400px;
     height: 40px;
     text-align: center;
     cursor: pointer;
@@ -233,40 +250,45 @@ body {
     color: #ffffff;
 }
 
-.letter_form_title {
-    margin-left: 100px;
-    height: 30px;
+        /* Форма */
+
+    /* Письмо */
+
+/* Контент */
+
+/* Футер */
+
+.main_footer {
+    display: flex;
+    margin: 0 auto;
+    width: 1000px;
+    min-height: 40px;
+    background-color: darkslategray;
 }
 
-.letter_form_elem_desc {
-    margin: 20px 0 0 100px;
-    font-family: "San Francisco", monospace;
-    color: #ffffff;
-}
-
-.container {
-    opacity: 0.9;
-    margin-top: 20px;
-    min-height: calc(100vh - 150px);
-}
-
-.footer_nav,
-.footer_nav_elem {
-    display: inline-block;
+.footer_nav {
+    width: 250px;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .footer_nav_elem,
 .footer_copyright {
-    padding: 10px 20px;
-    text-align: center;
     color: #9ef1f7;
     font-family: "Helvetica Narrow", monospace;
     font-weight: 600;
+
 }
 
 .footer_copyright {
-    float: right;
+    margin-left: 450px;
+    align-self: center;
 }
+
+/* Футер */
+
 
 
 

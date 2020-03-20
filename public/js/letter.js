@@ -1,6 +1,7 @@
 let actionButton = document.querySelector('.action_button');
-let buttonLetterForYou = document.querySelector('.visually_hidden[data-title="for_you"]');
-let buttonLetterForAnother = document.querySelector('.visually_hidden[data-title="for_another"]');
+let buttonsWrapper = document.querySelector('div.visually_hidden');
+let buttonLetterForYou = document.querySelector('.button_for_letters[data-title="for_you"]');
+let buttonLetterForAnother = document.querySelector('.button_for_letters[data-title="for_another"]');
 
 actionButton.addEventListener('click', showButtonsForLetters);
 
@@ -27,8 +28,7 @@ function buttonsForLettersHandler(event)
 
 function removeButtons()
 {
-    buttonLetterForYou.parentNode.removeChild(buttonLetterForYou);
-    buttonLetterForAnother.parentNode.removeChild(buttonLetterForAnother);
+    buttonsWrapper.parentNode.removeChild(buttonsWrapper);
 }
 
 function showForm()
@@ -41,13 +41,10 @@ function showForm()
 
 function showButtonsForLetters()
 {
-    let buttonsForLetters = document.querySelectorAll('button.visually_hidden');
+    let buttonsWrapper = document.querySelector('div.visually_hidden');
 
-
-    buttonsForLetters.forEach(function(button) {
-        button.classList.remove('visually_hidden');
-        button.classList.add('button_for_letters');
-    });
+    buttonsWrapper.classList.remove('visually_hidden');
+    buttonsWrapper.classList.add('buttons_wrapper');
 
     actionButton.style.cursor = 'default';
     addListenersAfterShow();

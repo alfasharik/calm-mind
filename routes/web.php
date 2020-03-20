@@ -21,10 +21,22 @@ Route::get('/home', function () {
    return view('pages.home');
 });
 
+Route::get('/letter', function () {
+    return view('pages.letter');
+});
+
 Route::get('/thought', function () {
     return view('pages.thought');
 });
 
-Route::get('/letter', function () {
-    return view('pages.letter');
+Route::get('/feed', function () {
+    return view('pages.feed');
+});
+
+Route::get('/blog', function() {
+   return view('pages.blog');
+});
+
+Route::get('/about', function () {
+   return view('pages.about');
 });

@@ -9,7 +9,7 @@ function actionButtonHandler()
 
     wrapper.classList.remove('visually_hidden');
     wrapper.style.opacity = '0';
-    wrapper.style.display = 'inline-block';
+    wrapper.style.display = 'flex';
 
     timerId = setInterval(showContent, 100, wrapper);
 }

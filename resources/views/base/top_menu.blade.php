@@ -1,20 +1,20 @@
 @section('top_menu')
     <nav class="main_nav">
         <ul class="top_menu">
-            <li class="top_menu_element">
-                <a href="/letter" class="top_menu_element_link">Письмо</a>
+            <li>
+                <a class="top_menu_link" href="/letter">Письмо</a>
             </li>
-            <li class="top_menu_element">
-                <a href="/thought" class="top_menu_element_link">Мысль</a>
+            <li>
+                <a class="top_menu_link" href="/thought">Мысль</a>
             </li>
-            <li class="top_menu_element">
-                <a href="#" class="top_menu_element_link">Лента</a>
+            <li>
+                <a class="top_menu_link" href="/feed">Лента</a>
             </li>
-            <li class="top_menu_element">
-                <a href="#" class="top_menu_element_link">Блог</a>
+            <li>
+                <a class="top_menu_link" href="/blog">Блог</a>
             </li>
-            <li class="top_menu_element">
-                <a href="#" class="top_menu_element_link">Об авторе</a>
+            <li>
+                <a class="top_menu_link" href="/about">Об авторе</a>
             </li>
         </ul>
     </nav>
