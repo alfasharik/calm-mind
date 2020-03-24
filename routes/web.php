@@ -11,14 +11,20 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-   return view('pages.home');
+Route::get('/start', function () {
+   return view('pages.start');
 });
 
 Route::get('/letter', function () {
@@ -39,4 +45,8 @@ Route::get('/blog', function() {
 
 Route::get('/about', function () {
    return view('pages.about');
+});
+
+Route::get('/test', function() {
+    dd(DB::select('select * from users'));
 });
