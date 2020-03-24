@@ -17,14 +17,14 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/kek', function () {
+    return view('laravelAuth.register');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', function () {
     return view('welcome');
-});
-
-Route::get('/start', function () {
-   return view('pages.start');
 });
 
 Route::get('/letter', function () {

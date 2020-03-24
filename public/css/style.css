@@ -42,7 +42,6 @@ body {
 
 .top_panel_title {
     font-family: "Another Castle", monospace;
-    margin-right: 510px;
 }
 
 .top_panel_link {
@@ -52,6 +51,15 @@ body {
 
 .top_panel_link:hover {
     color: darkslategray;
+}
+
+.lk_buttons {
+    margin-left: 460px;
+    margin-right: 100px;
+    list-style-type: none;
+    display: flex;
+    width: 180px;
+    justify-content: space-around;
 }
 
 .top_panel_enter {
