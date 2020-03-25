@@ -3,7 +3,11 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Contracts\Support\Renderable;
+use App\Thought as ThoughtModel;
+use App\User as UserModel;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Feed
@@ -18,6 +22,11 @@ class Feed extends Controller
      */
     public function index() : Renderable
     {
-        return view('pages.feed');
+        $arThoughts = UserModel::find(1)->thoughts()->get();
+
+        foreach ($arThoughts as $arUser) {
+            var_dump($arUser->text);
+        }
+        return view('pages.feed', ['thoughts' => $arThoughts]);
     }
 }

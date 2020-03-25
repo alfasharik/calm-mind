@@ -36,4 +36,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Получить мысли пользователя
+     *
+     */
+    public function thoughts()
+    {
+        return $this->hasMany('App\Thought');
+    }
 }
