@@ -12,37 +12,20 @@
 */
 
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'Home@index')->name('home');
 
-Route::get('/', function () {
-    return view('blank');
-});
+Route::get('/', 'Blank@index')->name('blank');
 
-Route::get('/letter', function () {
-    return view('pages.letter');
-});
+Route::get('/letter', 'Letter@index')->name('letter');
 
-Route::get('/thought', function () {
-    return view('pages.thought');
-});
+Route::get('/thought', 'Thought@index')->name('thought');
 
-Route::get('/feed', function () {
-    return view('pages.feed');
-});
+Route::get('/feed', 'Feed@index')->name('feed');
 
-Route::get('/blog', function() {
-   return view('pages.blog');
-});
+Route::get('/blog', 'Blog@index')->name('blog');
 
-Route::get('/about', function () {
-   return view('pages.about');
-});
-
-Route::get('/test', function() {
-    dd(DB::select('select * from users'));
-});
+Route::get('/about', 'About@index')->name('about');
