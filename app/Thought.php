@@ -18,6 +18,18 @@ class Thought extends Model
     public $timestamps = false;
 
     /**
+     * Cписок полей для добавления.
+     *
+     * @var array $fillable
+     */
+    protected $fillable = [
+        'user_id',
+        'text',
+        'date_created_at',
+        'is_open',
+    ];
+
+    /**
      * Пользователь
      */
     public function user()

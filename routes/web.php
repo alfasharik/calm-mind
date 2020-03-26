@@ -29,3 +29,5 @@ Route::get('/feed', 'Feed@index')->name('feed');
 Route::get('/blog', 'Blog@index')->name('blog');
 
 Route::get('/about', 'About@index')->name('about');
+
+Route::post('/api/thought/add', 'Thought@add')->name('thought_add');

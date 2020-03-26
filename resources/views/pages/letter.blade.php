@@ -14,6 +14,8 @@
             <button class="button_for_letters" data-title="for_another">Письмо другому</button>
         </div>
         <form class="visually_hidden">
+            @csrf
+
             <p class="letter_form_elem_desc">Кому пишем?</p>
             <input type="text" name="title" class="letter_form_title">
             <p class="letter_form_elem_desc">Опиши свои чувства!</p>
