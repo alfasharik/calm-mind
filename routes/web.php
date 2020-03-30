@@ -31,3 +31,5 @@ Route::get('/blog', 'Blog@index')->name('blog');
 Route::get('/about', 'About@index')->name('about');
 
 Route::post('/api/thought/add', 'Thought@add')->name('thought_add');
+
+Route::post('api/letters/add', 'Letter@add')->name('letter_add');

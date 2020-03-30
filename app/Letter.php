@@ -6,11 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-/**
- * Class thought
- * @package App
- */
-class Thought extends Model
+class Letter extends Model
 {
     /**
      * Indicates if the model should be timestamped.
@@ -26,7 +22,15 @@ class Thought extends Model
      */
     protected $fillable = [
         'user_id',
-        'text',
+
+        'wrath_text',
+        'sad_text',
+        'fear_text',
+        'regret_text',
+        'love_text',
+
+        'to_whom',
+
         'date_created_at',
         'is_open',
     ];

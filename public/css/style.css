@@ -238,8 +238,12 @@ body {
 }
 
 .letter_form_text {
-    min-height: 450px;
+    min-height: 75px;
     resize: none;
+}
+
+.thought_text {
+    min-height: 150px;
 }
 
 .letter_form_submit {

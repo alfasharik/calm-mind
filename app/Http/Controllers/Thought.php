@@ -34,13 +34,11 @@ class Thought extends Controller
      */
     public function add(Request $obRequest) : Response
     {
-        $sText = $obRequest->input('text');
-
         $obThought = new ThoughtModel();
 
         $obThought::create([
             'user_id'         => Auth::user()->id,
-            'text'            => $sText,
+            'text'            => $obRequest->input('text'),
             'date_created_at' => time(),
             'is_open'         => false,
         ]);

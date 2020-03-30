@@ -3,8 +3,11 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Thought;
+use App\Letter;
 
 class User extends Authenticatable
 {
@@ -41,8 +44,17 @@ class User extends Authenticatable
      * Получить мысли пользователя
      *
      */
-    public function thoughts()
+    public function thoughts(): HasMany
     {
-        return $this->hasMany('App\Thought');
+        return $this->hasMany(Thought::class);
+    }
+
+    /**
+     * Получить письма пользователя
+     *
+     */
+    public function letters(): HasMany
+    {
+        return $this->hasMany(Letter::class);
     }
 }
