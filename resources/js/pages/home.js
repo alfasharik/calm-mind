@@ -16,7 +16,7 @@ function actionButtonHandler()
 
 function showContent(wrapper)
 {
-   wrapper.style.opacity = +wrapper.style.opacity + 0.1;
+    wrapper.style.opacity = +wrapper.style.opacity + 0.1;
 
     if (wrapper.style.opacity === '1') {
         clearInterval(timerId);

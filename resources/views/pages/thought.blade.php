@@ -9,7 +9,7 @@
         Каждому иногда нужно выговориться, выплесни все, что думаешь:
     </button>
     <div class="content">
-        <form class="visually_hidden" method="post" action="{{ route('thought_add') }}">
+        <form class="visually_hidden">
             @csrf
 
             <p class="letter_form_elem_desc">Давай, не сдерживайся!</p>
