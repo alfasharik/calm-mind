@@ -5,7 +5,8 @@ let form = document.querySelector('.visually_hidden');
 let formSubmit = document.querySelector('.letter_form_submit');
 
 actionButton.addEventListener('click', showForm);
-formSubmit.addEventListener('click', requestHandler);
+
+formSubmit.addEventListener('click', addThought);
 
 function showForm()
 {
@@ -16,39 +17,29 @@ function showForm()
     actionButton.style.cursor = 'default';
 }
 
-function requestHandler()
+function addThought()
 {
     let sText = document.querySelector('.letter_form_text').value;
 
     axios.post('http://calm-mind/api/thought/add', {
         text: sText,
     }).then(function (response) {
-        console.log(response.status);
+        clearField();
+        addDescription();
     }).catch(function (response) {
-        console.log(response.status);
     });
 }
 
-function thoughtAddHandler()
+function clearField()
 {
-
-    form.submit();
-    console.log('вошел в хендлер');
-    let sText = document.querySelector('.letter_form_text').value;
-    const sParams = 'text=' + sText;
-
-    let obRequest = new XMLHttpRequest();
-
-    obRequest.open('post', 'http://calm-mind/api/thought/add', true);
-    obRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    obRequest.onreadystatechange = responseReady;
-
-    obRequest.send(sParams);
+    let field = document.querySelector('.thought_text');
+    field.value = '';
 }
 
-function responseReady(obRequest)
+function addDescription()
 {
-    if(obRequest.readyState === 4 && obRequest.status === 200) {
-        console.log(obRequest.responseText);
-    }
+    let description = document.getElementById('modal_window');
+
+    description.classList.remove('visually_hidden');
+    description.classList.add('modal_window');
 }

@@ -32,6 +32,7 @@
 
             <button class="letter_form_submit" type="submit" wfd-id="16">Отправить!</button>
         </form>
+        <div id="modal_window" class="modal_window"></div>
     </div>
 
 @endsection
