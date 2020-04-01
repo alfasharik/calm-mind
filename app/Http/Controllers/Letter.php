@@ -34,6 +34,12 @@ class Letter extends Controller
      */
     public function add(Request $obRequest) : Response
     {
+        $sToWhom = 'yourself';
+
+        if ($obRequest->input('to_whom') !== null) {
+            $sToWhom = $obRequest->input('to_whom');
+        }
+
         $obLetter = new LetterModel();
 
         $obLetter::create([
@@ -45,7 +51,7 @@ class Letter extends Controller
            'regret_text'     => $obRequest->input('regret_text'),
            'love_text'       => $obRequest->input('love_text'),
 
-           'to_whom'         => $obRequest->input('to_whom'),
+           'to_whom'         => $sToWhom,
 
            'date_created_at' => time(),
            'is_open'         => false,

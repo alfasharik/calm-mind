@@ -17,7 +17,7 @@
             <button class="letter_form_submit" type="button" wfd-id="16">Отправить!</button>
         </form>
         <form id="modal_window" class="visually_hidden">
-            <h3 class="modal_window_desc">Форма отправлена!</h3>
+            <h3 class="modal_window_desc"></h3>
             <button class="modal_window_button" type="submit">ОК</button>
         </form>
     </div>

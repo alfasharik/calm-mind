@@ -22,11 +22,8 @@ class Feed extends Controller
      */
     public function index() : Renderable
     {
-        $arThoughts = UserModel::find(1)->thoughts()->get();
+        $arThoughts = ThoughtModel::where('is_open', 0)->get();
 
-        foreach ($arThoughts as $arUser) {
-            var_dump($arUser->text);
-        }
         return view('pages.feed', ['thoughts' => $arThoughts]);
     }
 }

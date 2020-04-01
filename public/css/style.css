@@ -143,7 +143,6 @@ body {
     /* Главная кнопка */
 
 .content {
-    position: relative;
     display: flex;
     width: 800px;
     background-color: darkslategray;
@@ -166,6 +165,8 @@ body {
 }
 
 .content_element_text {
+    word-wrap: break-word;
+    height: border-box;
     margin-top: 20px;
     text-align: justify;
     font-family: "San Francisco", monospace;
@@ -179,7 +180,6 @@ body {
 .buttons_wrapper {
     display: flex;
     justify-content: space-around;
-    min-height: 200px;
     align-items: center;
 }
 
@@ -191,6 +191,7 @@ body {
     border: 1px solid #9ef1f7;
     color: #9ef1f7;
     font-family: "San Francisco", monospace;
+    margin: 20px 0;
 }
 
 .button_for_letters:hover {
@@ -239,7 +240,6 @@ body {
 }
 
 .letter_form_text {
-    min-height: 75px;
     resize: none;
 }
 

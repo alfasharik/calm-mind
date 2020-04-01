@@ -25,8 +25,9 @@ function addThought()
         text: sText,
     }).then(function (response) {
         clearField();
-        addDescription();
+        addDescription('Форма отправлена!');
     }).catch(function (response) {
+        addDescription('Заполните все поля!');
     });
 }
 
@@ -36,10 +37,12 @@ function clearField()
     field.value = '';
 }
 
-function addDescription()
+function addDescription(textDesc)
 {
-    let description = document.getElementById('modal_window');
+    let modalWindow = document.getElementById('modal_window');
+    let description = document.querySelector('.modal_window_desc');
 
-    description.classList.remove('visually_hidden');
-    description.classList.add('modal_window');
+    description.innerHTML = textDesc;
+    modalWindow.classList.remove('visually_hidden');
+    modalWindow.classList.add('modal_window');
 }

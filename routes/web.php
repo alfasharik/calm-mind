@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/home', 'Home@index')->name('home');
-
 Route::get('/', 'Blank@index')->name('blank');
+
+Route::get('/home', 'Home@index')->name('home');
 
 Route::get('/letter', 'Letter@index')->name('letter');
 
@@ -32,4 +32,4 @@ Route::get('/about', 'About@index')->name('about');
 
 Route::post('/api/thought/add', 'Thought@add')->name('thought_add');
 
-Route::post('api/letters/add', 'Letter@add')->name('letter_add');
+Route::post('/api/letter/add', 'Letter@add')->name('letter_add');
