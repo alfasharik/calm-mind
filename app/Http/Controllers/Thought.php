@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Auth;
  */
 class Thought extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Страница мыслей.
      *
