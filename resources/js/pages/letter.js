@@ -1,9 +1,11 @@
 import axios from "axios";
 
 let actionButton = document.querySelector('.action_button');
+
 let buttonsWrapper = document.querySelector('div.visually_hidden');
 let buttonLetterForYou = document.querySelector('.button_for_letters[data-title="for_you"]');
 let buttonLetterForAnother = document.querySelector('.button_for_letters[data-title="for_another"]');
+
 let formSubmit = document.querySelector('.letter_form_submit');
 
 actionButton.addEventListener('click', showButtonsForLetters);
@@ -68,25 +70,20 @@ function changeActionButtonText(text)
 
 function addLetter() {
     let sToWhom;
+
     if (document.getElementById('to_whom')) {
         sToWhom = document.getElementById('to_whom').value;
     } else {
         sToWhom = null;
     }
 
-    let sWrathText = document.getElementById('wrath_text').value;
-    let sSadText = document.getElementById('sad_text').value;
-    let sFearText = document.getElementById('fear_text').value;
-    let sRegretText = document.getElementById('regret_text').value;
-    let sLoveText = document.getElementById('love_text').value;
-
     axios.post('http://calm-mind/api/letter/add', {
         to_whom: sToWhom,
-        wrath_text: sWrathText,
-        sad_text: sSadText,
-        fear_text: sFearText,
-        regret_text: sRegretText,
-        love_text: sLoveText,
+        wrath_text: document.getElementById('wrath_text').value,
+        sad_text: document.getElementById('sad_text').value,
+        fear_text: document.getElementById('fear_text').value,
+        regret_text: document.getElementById('regret_text').value,
+        love_text: document.getElementById('love_text').value,
     }).then(function (response) {
         clearFields();
         addDescription('Форма отправлена!');
@@ -100,17 +97,12 @@ function clearFields()
     if (document.getElementById('to_whom')) {
         document.getElementById('to_whom').value = '';
     }
-    let sWrathText = document.getElementById('wrath_text');
-    let sSadText = document.getElementById('sad_text');
-    let sFearText = document.getElementById('fear_text');
-    let sRegretText = document.getElementById('regret_text');
-    let sLoveText = document.getElementById('love_text');
 
-    sWrathText.value = '';
-    sSadText.value = '';
-    sFearText.value = '';
-    sRegretText.value = '';
-    sLoveText.value = '';
+    document.getElementById('wrath_text').value = '';
+    document.getElementById('sad_text').value = '';
+    document.getElementById('fear_text').value = '';
+    document.getElementById('regret_text').value = '';
+    document.getElementById('love_text').value = '';
 }
 
 function addDescription(textDesc)

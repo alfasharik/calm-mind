@@ -306,6 +306,21 @@ body {
 
     /* Письмо */
 
+.wrapper_for_feed {
+    display: flex;
+    justify-content: space-around;
+}
+
+.feed_link {
+    margin: 20px 0;
+    text-decoration: none;
+    color: #9ef1f7;
+}
+
+.feed_link:hover {
+    color: #ffffff;
+}
+
 /* Контент */
 
 /* Футер */

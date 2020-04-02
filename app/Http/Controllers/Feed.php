@@ -3,11 +3,12 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Contracts\Support\Renderable;
 use App\Thought as ThoughtModel;
+use App\Letter as LetterModel;
 use App\User as UserModel;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 /**
  * Class Feed
@@ -23,12 +24,23 @@ class Feed extends Controller
     /**
      * Лента.
      *
+     * @param Request $obRequest
      * @return Renderable
      */
-    public function index() : Renderable
+    public function index(Request $obRequest) : Renderable
     {
-        $arThoughts = ThoughtModel::where('is_open', 0)->get();
+        $sSection = '';
 
-        return view('pages.feed', ['thoughts' => $arThoughts]);
+        if ($obRequest->query('section')) {
+            $sSection = ucfirst($obRequest->query('section'));
+
+            $modelName = $sSection . 'Model';
+
+            $arData = $modelName::where('is_open', 0)->get();
+
+            return view('pages.feed', ['data' => $arData, 'section' => $sSection]);
+        }
+
+        return view('pages.feed', ['section' => $sSection]);
     }
 }

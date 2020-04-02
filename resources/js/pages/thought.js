@@ -1,11 +1,12 @@
 import axios from 'axios';
 
 let actionButton = document.querySelector('.action_button');
+
 let form = document.querySelector('.visually_hidden');
+
 let formSubmit = document.querySelector('.letter_form_submit');
 
 actionButton.addEventListener('click', showForm);
-
 formSubmit.addEventListener('click', addThought);
 
 function showForm()
