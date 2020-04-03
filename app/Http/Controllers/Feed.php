@@ -4,15 +4,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
-use App\Thought as ThoughtModel;
-use App\Letter as LetterModel;
 use App\User as UserModel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 /**
  * Class Feed
- * @package App\Http\Controllers\Auth
+ * @package App\Http\Controllers
  */
 class Feed extends Controller
 {
@@ -34,11 +32,14 @@ class Feed extends Controller
         if ($obRequest->query('section')) {
             $sSection = ucfirst($obRequest->query('section'));
 
-            $modelName = $sSection . 'Model';
+            $modelName = "App\\" . $sSection;
 
-            $arData = $modelName::where('is_open', 0)->get();
+            $arData = (new $modelName)->where('is_open', 0)->get();
 
-            return view('pages.feed', ['data' => $arData, 'section' => $sSection]);
+            return view(
+                'pages.feed',
+                ['data' => $arData, 'section' => lcfirst($sSection)]
+            );
         }
 
         return view('pages.feed', ['section' => $sSection]);

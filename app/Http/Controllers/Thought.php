@@ -39,15 +39,28 @@ class Thought extends Controller
      */
     public function add(Request $obRequest) : Response
     {
-        $obThought = new ThoughtModel();
+        if ($obRequest->input('text')) {
+            $sText = $obRequest->input('text');
 
-        $obThought::create([
-            'user_id'         => Auth::user()->id,
-            'text'            => $obRequest->input('text'),
-            'date_created_at' => time(),
-            'is_open'         => false,
-        ]);
+            $obThought = new ThoughtModel();
 
-        return new Response();
+            $obThought::create([
+                'user_id' => Auth::user()->id,
+                'text' => $sText,
+                'date_created_at' => time(),
+                'is_open' => false,
+            ]);
+
+            return new Response();
+        }
+    }
+
+    public function delete(int $id)
+    {
+        if ($id) {
+            ThoughtModel::destroy($id);
+        }
+
+        return redirect()->route('account');
     }
 }

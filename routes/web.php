@@ -30,6 +30,12 @@ Route::get('/blog', 'Blog@index')->name('blog');
 
 Route::get('/about', 'About@index')->name('about');
 
+Route::get('/lk', 'Account@index')->name('account');
+
 Route::post('/api/thought/add', 'Thought@add')->name('thought_add');
 
+Route::get('api/thought/delete/{id}', 'Thought@delete')->name('thought_delete');
+
 Route::post('/api/letter/add', 'Letter@add')->name('letter_add');
+
+Route::get('api/letter/delete/{id}', 'Letter@delete')->name('letter_delete');

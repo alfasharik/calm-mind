@@ -48,20 +48,29 @@ class Letter extends Controller
         $obLetter = new LetterModel();
 
         $obLetter::create([
-           'user_id'         => Auth::user()->id,
+           'user_id' => Auth::user()->id,
 
-           'wrath_text'      => $obRequest->input('wrath_text'),
-           'sad_text'        => $obRequest->input('sad_text'),
-           'fear_text'       => $obRequest->input('fear_text'),
-           'regret_text'     => $obRequest->input('regret_text'),
-           'love_text'       => $obRequest->input('love_text'),
+           'wrath_text' => $obRequest->input('wrath_text'),
+           'sad_text' => $obRequest->input('sad_text'),
+           'fear_text' => $obRequest->input('fear_text'),
+           'regret_text' => $obRequest->input('regret_text'),
+           'love_text' => $obRequest->input('love_text'),
 
-           'to_whom'         => $sToWhom,
+           'to_whom' => $sToWhom,
 
            'date_created_at' => time(),
-           'is_open'         => false,
+           'is_open' => false,
         ]);
 
         return new Response();
+    }
+
+    public function delete(int $id)
+    {
+        if ($id) {
+            LetterModel::destroy($id);
+        }
+
+        return redirect()->route('account');
     }
 }

@@ -17,5 +17,13 @@
                 <a class="top_menu_link" href="/about">Об авторе</a>
             </li>
         </ul>
+        <ul class="right_menu">
+            <li>
+                <a class="right_menu_link" href="/lk">Личный кабинет</a>
+            </li>
+            <li>
+                <a class="right_menu_link" href="/admin">Админ</a>
+            </li>
+        </ul>
     </nav>
 @show

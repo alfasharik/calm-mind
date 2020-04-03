@@ -78,10 +78,15 @@ body {
 
 /*Топ меню*/
 
+.main_nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .top_menu {
     width: 1000px;
     display: flex;
-    margin: 0 auto;
+    margin-right: 260px;
     justify-content: space-around;
     background-color: darkslategray;
     min-height: 40px;
@@ -96,6 +101,25 @@ body {
 }
 
 .top_menu_link:hover {
+    color: #ffffff;
+}
+
+.right_menu {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: darkslategray;
+    list-style-type: none;
+}
+
+.right_menu_link {
+    text-decoration: none;
+    color: #9ef1f7;
+    font-family: "Helvetica Narrow", monospace;
+}
+
+.right_menu_link:hover {
     color: #ffffff;
 }
 
@@ -171,6 +195,16 @@ body {
     text-align: justify;
     font-family: "San Francisco", monospace;
     font-size: 14px;
+    color: #ffffff;
+}
+
+.content_element_link {
+    align-self: flex-end;
+    color: #9ef1f7;
+    text-decoration: none;
+}
+
+.content_element_link:hover {
     color: #ffffff;
 }
 
