@@ -10,8 +10,8 @@
     </button>
     <div class="content">
         <div class="wrapper_for_feed">
-            <a class="feed_link" href="/feed?section=letter">Письма</a>
-            <a class="feed_link" href="/feed?section=thought">Мысли</a>
+            <a class="feed_link" href="/feed/letter">Письма</a>
+            <a class="feed_link" href="/feed/thought">Мысли</a>
         </div>
         @if ($section === 'thought')
 

@@ -19,7 +19,7 @@
         </ul>
         <ul class="right_menu">
             <li>
-                <a class="right_menu_link" href="/lk">Личный кабинет</a>
+                <a class="right_menu_link" href="/account">Личный кабинет</a>
             </li>
             <li>
                 <a class="right_menu_link" href="/admin">Админ</a>

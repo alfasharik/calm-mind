@@ -1,12 +1,16 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use App\User;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Letter extends Model
+/**
+ * Class thought
+ * @package App
+ */
+class Thought extends Model
 {
     /**
      * Indicates if the model should be timestamped.
@@ -22,15 +26,7 @@ class Letter extends Model
      */
     protected $fillable = [
         'user_id',
-
-        'wrath_text',
-        'sad_text',
-        'fear_text',
-        'regret_text',
-        'love_text',
-
-        'to_whom',
-
+        'text',
         'date_created_at',
         'is_open',
     ];
@@ -41,5 +37,24 @@ class Letter extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Получить только открытые мысли.
+     *
+     * @return mixed
+     */
+    public function getOpen()
+    {
+        return $this
+            ->where('is_open', 1)
+            ->get();
+    }
+
+    public function getByUserId(int $userId)
+    {
+        return $this
+            ->where('user_id', $userId)
+            ->get();
     }
 }

@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Thought as ThoughtModel;
+use App\Models\Thought as ThoughtModel;
 use Illuminate\Support\Facades\Auth;
 
 /**
@@ -39,16 +39,14 @@ class Thought extends Controller
      */
     public function add(Request $obRequest) : Response
     {
-        if ($obRequest->input('text')) {
-            $sText = $obRequest->input('text');
+        $sText = $obRequest->input('text');
 
-            $obThought = new ThoughtModel();
-
-            $obThought::create([
+        if ($sText) {
+            ThoughtModel::create([
                 'user_id' => Auth::user()->id,
                 'text' => $sText,
                 'date_created_at' => time(),
-                'is_open' => false,
+                'is_open' => true,
             ]);
 
             return new Response();

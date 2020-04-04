@@ -24,17 +24,17 @@ Route::get('/letter', 'Letter@index')->name('letter');
 
 Route::get('/thought', 'Thought@index')->name('thought');
 
-Route::get('/feed', 'Feed@index')->name('feed');
+Route::get('/feed/{section?}', 'Feed@show')->name('feed');
 
 Route::get('/blog', 'Blog@index')->name('blog');
 
 Route::get('/about', 'About@index')->name('about');
 
-Route::get('/lk', 'Account@index')->name('account');
+Route::get('/account/{section?}', 'Account@index')->name('account');
 
 Route::post('/api/thought/add', 'Thought@add')->name('thought_add');
 
-Route::get('api/thought/delete/{id}', 'Thought@delete')->name('thought_delete');
+Route::delete('api/thought/delete/{id}', 'Thought@delete')->name('thought_delete');
 
 Route::post('/api/letter/add', 'Letter@add')->name('letter_add');
 

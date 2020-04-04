@@ -4,8 +4,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
-use App\User as UserModel;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 /**
@@ -22,19 +20,17 @@ class Feed extends Controller
     /**
      * Лента.
      *
-     * @param Request $obRequest
+     * @param string $sSection
      * @return Renderable
      */
-    public function index(Request $obRequest) : Renderable
+    public function show(string $sSection = '') : Renderable
     {
-        $sSection = '';
+        $sModelsNameSpace = "App\\Models\\";
 
-        if ($obRequest->query('section')) {
-            $sSection = ucfirst($obRequest->query('section'));
+        if ($sSection) {
+            $modelName = $sModelsNameSpace . ucfirst($sSection);
 
-            $modelName = "App\\" . $sSection;
-
-            $arData = (new $modelName)->where('is_open', 0)->get();
+            $arData = (new $modelName)->getOpen();
 
             return view(
                 'pages.feed',

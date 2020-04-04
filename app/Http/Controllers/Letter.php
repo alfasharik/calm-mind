@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Letter as LetterModel;
+use App\Models\Letter as LetterModel;
 use Illuminate\Support\Facades\Auth;
 
 /**
@@ -45,9 +45,7 @@ class Letter extends Controller
             $sToWhom = $obRequest->input('to_whom');
         }
 
-        $obLetter = new LetterModel();
-
-        $obLetter::create([
+        LetterModel::create([
            'user_id' => Auth::user()->id,
 
            'wrath_text' => $obRequest->input('wrath_text'),

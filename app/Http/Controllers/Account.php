@@ -13,26 +13,34 @@ use Illuminate\Support\Facades\Auth;
  */
 class Account extends Controller
 {
-    public function index(Request $obRequest) : Renderable
+    public function __construct()
     {
-        $sSection = '';
+        $this->middleware('auth');
+    }
 
-        if ($obRequest->query('section')) {
-            $sSection = ucfirst($obRequest->input('section'));
+    /**
+     * Страница личного кабинета.
+     *
+     * @param string $sSection
+     *
+     * @return Renderable
+     */
+    public function index(string $sSection = '') : Renderable
+    {
+        $sModelNameSpace = "App\\Models\\";
 
-            $obModelName = 'App\\' . $sSection;
+        if ($sSection) {
+            $obModelName = $sModelNameSpace . ucfirst($sSection);
 
-            $arData = (new $obModelName)
-                ->where('user_id', Auth::user()->id)
-                ->get();
+            $arData = (new $obModelName)->getByUserId(Auth::user()->id);
 
             return view(
-                'pages.lk',
+                'pages.account',
                 ['data' => $arData, 'section' => lcfirst($sSection)]
             );
         }
 
-        return view('pages.lk', ['section' => $sSection]);
+        return view('pages.account', ['section' => $sSection]);
     }
 
 }
