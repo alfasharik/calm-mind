@@ -25,19 +25,30 @@ class Feed extends Controller
      */
     public function show(string $sSection = '') : Renderable
     {
+        $isEditable = false;
         $sModelsNameSpace = "App\\Models\\";
 
         if ($sSection) {
             $modelName = $sModelsNameSpace . ucfirst($sSection);
 
-            $arData = (new $modelName)->getOpen();
+            $arData = (new $modelName)->open();
 
             return view(
                 'pages.feed',
-                ['data' => $arData, 'section' => lcfirst($sSection)]
+                [
+                    'data' => $arData,
+                    'section' => lcfirst($sSection),
+                    'isEditable' => $isEditable,
+                ]
             );
         }
 
-        return view('pages.feed', ['section' => $sSection]);
+        return view(
+            'pages.feed',
+            [
+                'section' => $sSection,
+                'isEditable' => $isEditable,
+            ]
+        );
     }
 }

@@ -25,22 +25,33 @@ class Account extends Controller
      *
      * @return Renderable
      */
-    public function index(string $sSection = '') : Renderable
+    public function show(string $sSection = '') : Renderable
     {
+        $isEditable = true;
         $sModelNameSpace = "App\\Models\\";
 
         if ($sSection) {
             $obModelName = $sModelNameSpace . ucfirst($sSection);
 
-            $arData = (new $obModelName)->getByUserId(Auth::user()->id);
+            $arData = (new $obModelName)->byUserId(Auth::user()->id);
 
             return view(
                 'pages.account',
-                ['data' => $arData, 'section' => lcfirst($sSection)]
+                [
+                    'data' => $arData,
+                    'section' => lcfirst($sSection),
+                    'isEditable' => $isEditable,
+                ]
             );
         }
 
-        return view('pages.account', ['section' => $sSection]);
+        return view(
+            'pages.account',
+            [
+                'section' => $sSection,
+                'isEditable' => $isEditable,
+            ]
+        );
     }
 
 }

@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ThoughtAdd;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -25,7 +26,7 @@ class Thought extends Controller
      *
      * @return Renderable
      */
-    public function index() : Renderable
+    public function form() : Renderable
     {
         return view('pages.thought');
     }
@@ -33,24 +34,20 @@ class Thought extends Controller
     /**
      * Добавление новой мысли
      *
-     * @param Request $obRequest
+     * @param ThoughtAdd $obRequest
      *
      * @return Response
      */
-    public function add(Request $obRequest) : Response
+    public function add(ThoughtAdd $obRequest) : Response
     {
-        $sText = $obRequest->input('text');
+        ThoughtModel::create([
+            'user_id' => Auth::user()->id,
+            'text' => $obRequest-> text,
+            'date_created_at' => time(),
+            'is_open' => true,
+        ]);
 
-        if ($sText) {
-            ThoughtModel::create([
-                'user_id' => Auth::user()->id,
-                'text' => $sText,
-                'date_created_at' => time(),
-                'is_open' => true,
-            ]);
-
-            return new Response();
-        }
+        return new Response();
     }
 
     public function delete(int $id)

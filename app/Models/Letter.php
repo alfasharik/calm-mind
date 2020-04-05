@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use App\Traits\Record;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Letter extends Model
 {
+    use Record;
+
     /**
      * Indicates if the model should be timestamped.
      *
@@ -41,24 +44,5 @@ class Letter extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
-    }
-
-    /**
-     * Получить только открытые мысли.
-     *
-     * @return mixed
-     */
-    public function getOpen()
-    {
-        return $this
-            ->where('is_open', 1)
-            ->get();
-    }
-
-    public function getByUserId(int $userId)
-    {
-        return $this
-            ->where('user_id', $userId)
-            ->get();
     }
 }

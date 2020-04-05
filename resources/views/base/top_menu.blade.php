@@ -2,10 +2,10 @@
     <nav class="main_nav">
         <ul class="top_menu">
             <li>
-                <a class="top_menu_link" href="/letter">Письмо</a>
+                <a class="top_menu_link" href="/letter/add">Письмо</a>
             </li>
             <li>
-                <a class="top_menu_link" href="/thought">Мысль</a>
+                <a class="top_menu_link" href="/thought/add">Мысль</a>
             </li>
             <li>
                 <a class="top_menu_link" href="/feed">Лента</a>

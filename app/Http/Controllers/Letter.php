@@ -3,8 +3,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LetterAdd;
 use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\Letter as LetterModel;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +25,7 @@ class Letter extends Controller
      *
      * @return Renderable
      */
-    public function index() : Renderable
+    public function form() : Renderable
     {
         return view('pages.letter');
     }
@@ -33,31 +33,29 @@ class Letter extends Controller
     /**
      * Добавить новое письмо
      *
-     * @param Request $obRequest
+     * @param LetterAdd $obRequest
      *
      * @return Response
      */
-    public function add(Request $obRequest) : Response
+    public function add(LetterAdd $obRequest) : Response
     {
-        $sToWhom = 'yourself';
-
-        if ($obRequest->input('to_whom') !== null) {
-            $sToWhom = $obRequest->input('to_whom');
+        if (!$sToWhom = $obRequest->to_whom) {
+            $sToWhom = 'yourself';
         }
 
         LetterModel::create([
            'user_id' => Auth::user()->id,
 
-           'wrath_text' => $obRequest->input('wrath_text'),
-           'sad_text' => $obRequest->input('sad_text'),
-           'fear_text' => $obRequest->input('fear_text'),
-           'regret_text' => $obRequest->input('regret_text'),
-           'love_text' => $obRequest->input('love_text'),
+           'wrath_text' => $obRequest->wrath_text,
+           'sad_text' => $obRequest->sad_text,
+           'fear_text' => $obRequest->fear_text,
+           'regret_text' => $obRequest->regret_text,
+           'love_text' => $obRequest->love_text,
 
            'to_whom' => $sToWhom,
 
            'date_created_at' => time(),
-           'is_open' => false,
+           'is_open' => true,
         ]);
 
         return new Response();

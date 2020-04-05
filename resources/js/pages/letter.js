@@ -77,7 +77,7 @@ function addLetter() {
         sToWhom = null;
     }
 
-    axios.post('http://calm-mind/api/letter/add', {
+    axios.post('http://calm-mind/letter/add', {
         to_whom: sToWhom,
         wrath_text: document.getElementById('wrath_text').value,
         sad_text: document.getElementById('sad_text').value,
