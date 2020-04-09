@@ -39,3 +39,4 @@ Route::get('/thought/delete/{id}', 'Thought@delete')->name('thought_delete');
 Route::post('/letter/add', 'Letter@add')->name('letter_add');
 
 Route::get('/letter/delete/{id}', 'Letter@delete')->name('letter_delete');
+
