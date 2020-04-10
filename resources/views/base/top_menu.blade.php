@@ -2,10 +2,10 @@
     <nav class="main_nav">
         <ul class="top_menu">
             <li>
-                <a class="top_menu_link" href="/letter/add">Письмо</a>
+                <a class="top_menu_link" href="{{ route('letters.create') }}">Письмо</a>
             </li>
             <li>
-                <a class="top_menu_link" href="/thought/add">Мысль</a>
+                <a class="top_menu_link" href="{{ route('thoughts.create') }}">Мысль</a>
             </li>
             <li>
                 <a class="top_menu_link" href="/feed">Лента</a>

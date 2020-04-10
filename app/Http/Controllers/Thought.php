@@ -21,35 +21,6 @@ class Thought extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Страница мыслей.
-     *
-     * @return Renderable
-     */
-    public function form() : Renderable
-    {
-        return view('pages.thought');
-    }
-
-    /**
-     * Добавление новой мысли
-     *
-     * @param ThoughtAdd $obRequest
-     *
-     * @return Response
-     */
-    public function add(ThoughtAdd $obRequest) : Response
-    {
-        ThoughtModel::create([
-            'user_id' => Auth::user()->id,
-            'text' => $obRequest-> text,
-            'date_created_at' => time(),
-            'is_open' => true,
-        ]);
-
-        return new Response();
-    }
-
     public function delete(int $id)
     {
         if ($id) {

@@ -22,7 +22,7 @@ function addThought()
 {
     let sText = document.querySelector('.letter_form_text').value;
 
-    axios.post('http://calm-mind/thought/add', {
+    axios.post('http://calm-mind/thoughts', {
         text: sText,
     }).then(function (response) {
         clearField();
