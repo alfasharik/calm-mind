@@ -208,6 +208,12 @@ body {
     color: #ffffff;
 }
 
+.form_delete_link {
+    background-color: darkslategray;
+    border: 1px solid #9ef1f7;
+    padding: 3px;
+    margin-left: 650px;
+}
 
     /* Письмо */
 

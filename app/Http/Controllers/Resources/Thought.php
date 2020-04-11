@@ -90,10 +90,12 @@ class Thought extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return Response
+     * @return int
      */
     public function destroy($id)
     {
-        //
+        ThoughtModel::destroy($id);
+
+        return redirect()->route('account');
     }
 }

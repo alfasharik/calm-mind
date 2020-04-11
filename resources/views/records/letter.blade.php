@@ -9,7 +9,11 @@
         <p class="content_element_text">{{ $datum->regret_text }}</p>
         <p class="content_element_text">{{ $datum->love_text }}</p>
         @if ($isEditable)
-            <a class="content_element_link" href="/letter/delete/{{$datum->id}}">Удалить</a>
+            <form action="{{ route('letters.destroy', $datum->id) }}" method="post">
+                @csrf
+                @method('delete')
+                <button class="content_element_link form_delete_link" type="submit">Удалить</button>
+            </form>
         @endif
     </div>
 @endforeach

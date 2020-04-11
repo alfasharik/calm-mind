@@ -106,6 +106,8 @@ class Letter extends Controller
      */
     public function destroy($id)
     {
-        //
+        LetterModel::destroy($id);
+
+        return redirect()->route('account');
     }
 }
